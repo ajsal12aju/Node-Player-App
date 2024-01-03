@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 router.get('/', (req, res) => {
     res.send('Hello, this is the root route!');
   });
-// Player routes
+// Player routess
 const playerRoutes = require('./playerRoutes');
 router.use('/player', playerRoutes);
 
