@@ -9,6 +9,9 @@ const playerSchema = new mongoose.Schema({
     place:{
       type: String,
       required: true,
+    },
+    image: {
+      type: String
     }
   
 });
