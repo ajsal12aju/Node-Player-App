@@ -7,7 +7,7 @@ exports.getFirstPlayerDetails = async (req, res) => {
   
       if (firstPlayer) {
         // Render the correct view file ('playerDetails.ejs') with the first player data
-        res.render('playerDetails', { player: firstPlayer });
+        res.render('player', { player: firstPlayer });
       } else {
         // If there is no first player, redirect to the home page
         res.redirect('/');
