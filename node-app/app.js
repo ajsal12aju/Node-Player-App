@@ -12,7 +12,6 @@ dotenv.config();
 app.use(express.json());
 
 app.set('view engine', 'ejs');
-
 // Routes
 app.use('/', routes);
 
