@@ -23,14 +23,11 @@ exports.getNextPlayerDetails = async (req, res) => {
   try {
     const currentPlayerId = req.params.id;
 
-    // Fetch the next player from the database based on the current player's ID
     const nextPlayer = await Player.findOne({ _id: { $gt: currentPlayerId } }).sort({ _id: 1 }).exec();
 
     if (nextPlayer) {
-      // Render the playerDetails.ejs view with the next player data
-      res.render('playerDetails', { player: nextPlayer });
+      res.render('player', { player: nextPlayer });
     } else {
-      // If there is no next player, redirect to the home page
       res.redirect('/');
     }
   } catch (error) {
@@ -41,12 +38,12 @@ exports.getNextPlayerDetails = async (req, res) => {
 
 exports.addPlayer = async (req, res) => {
   try {
-    const { idNo, name, place, image } = req.body;
+    const { idNo, name, place, imageUrl  } = req.body;
 
     const newPlayer = new Player({
       name,
       place,
-      image,
+      image:imageUrl,
       idNo,
     });
 
