@@ -7,12 +7,10 @@ const port = 3000;
 const dotenv = require('dotenv');
 const routes = require('./routes');
 
-// Load environment variables from .env file
 dotenv.config();
 app.use(express.json());
 
 app.set('view engine', 'ejs');
-// Routes
 app.use('/', routes);
 
 console.log(process.env.MONGODB_URI);

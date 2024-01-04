@@ -2,14 +2,11 @@ const Player = require('../models/player');
 
 exports.getFirstPlayerDetails = async (req, res) => {
     try {
-      // Fetch the first player from the database
       const firstPlayer = await Player.findOne().sort({ _id: 1 }).exec();
   
       if (firstPlayer) {
-        // Render the correct view file ('playerDetails.ejs') with the first player data
         res.render('player', { player: firstPlayer });
       } else {
-        // If there is no first player, redirect to the home page
         res.redirect('/');
       }
     } catch (error) {
