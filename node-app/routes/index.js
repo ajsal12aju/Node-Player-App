@@ -5,9 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
    res.render('index');
 });
-router.get('/', (req, res) => {
-    res.send('Hello, this is the root route!');
-  });
+
 // Player routesssss
 const playerRoutes = require('./playerRoutes');
 router.use('/player', playerRoutes);
