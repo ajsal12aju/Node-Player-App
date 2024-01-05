@@ -52,6 +52,6 @@ exports.addPlayer = async (req, res) => {
     });
   } catch (error) {
     console.error('Error adding player:', error);
-    res.status(500).send('Error adding player');
+    res.status(500).send('Error added not succses');
   }
 };
